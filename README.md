@@ -27,8 +27,21 @@ Create another view and call it "Records" to display the inserted records.
 # Now, before you run the application, there are two important commands you need to run in the “Package Manager Console”:
 Go to Tools menu in Visual Studio>NuGet Package Manager>Package Manager Console.
 Type the following commands to create the "billingsysdb" database and "billrecords" table:
-1- Add-Migration InitialCreate (Then press Enter)
+Command1: Add-Migration InitialCreate (Then press Enter)
+# What happens when you run “Add-Migration InitialCreate”?
+1.	EF Core checks the current state of your models and compares them to the last migration (if any exists). 
+2.	It calculates the differences and determines what changes need to be made to the database to make the database schema match the current state of the models.
+3.	EF Core then generates a migration file with a name like "XXXXXXXXXXXXXX_InitialCreate.cs" (where "XXXXXXXXXXXXXX" is a timestamp of when the migration was created). This file contains the operations necessary to apply the changes to the database.
+4.	This migration file will be placed in a "Migrations" folder in your project. If you open this file, you'll see C# code that represents the changes. This code will include methods like "Up()" and "Down()". The "Up()" method has the changes to apply the migration (e.g., create tables, add columns), and the "Down()" method has the reverse of those changes to undo the migration.
+# Note that: 
+After creating the migration with "Add-Migration", you would typically apply the migration to the database using the "Update-Database" command. This command will execute the code in the migration file against your database, applying the changes.
+Note that the "Add-Migration" command does not make any changes to your database. It merely creates a set of instructions on how to update the database. The actual changes to the database are made when you use the "Update-Database" command.
 
-2- o	Update-Database (Then press Enter)
+Command2: Update-Database (Then press Enter)
+# What happens when you run "Update-Database"? 
+1.	Checks for Pending Migrations: EF Core looks at the list of migrations that have been added to your project (these are typically in the "Migrations" folder) and determines which ones have not yet been applied to the database.
+2.	Applies the Migrations: For each pending migration, EF Core runs the code inside the "Up()" method of the migration. This code contains the operations necessary to change the database schema to match the model changes represented by the migration. This might include creating new tables, altering existing tables, adding or dropping columns, creating indices, and other database operations.
+3.	Updates the "__EFMigrationsHistory" Table: After successfully applying a migration, EF Core records this in a special table in the database called "__EFMigrationsHistory". This table keeps track of which migrations have been applied, allowing EF Core to determine pending migrations in the future.
+# Now if you go the database server you will find the database and the table created!
 
 
