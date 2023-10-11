@@ -10,7 +10,7 @@ Also enter the password of your own instead of the one provided in this example 
 # Add a few packages to the solution of the application to enable using EF and handle the connection to the database. 
 Right-click on the solution>Manage NuGet Packages for Solution>Browse Tab. 
 Here, there are three important packages to search for and install: "Microsoft.EntityFrameworkCore", "Microsoft.EntityFrameworkCore.Design", "Microsoft.EntityFrameworkCore.Tools", and "Pomelo.EntityFrameworkCore.MySql".
-# Create the class “BillingContext" as derived from DbContext class:
+# Create the class "BillingContext" as derived from DbContext class:
 Right-click on the "Models" folder>Add>New Item> nane it "BillingContext.cs". 
 The class is derived from DbContext class, which is a primary class in EF Core functionality for interacting with the database in an object-oriented manner without having to write raw SQL queries.
 The "DbSet" represents a collection of all the "BillRecord" entities in the database, essentially representing the "BillRecords" table in the database. 
