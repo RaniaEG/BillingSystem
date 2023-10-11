@@ -15,7 +15,6 @@ Right-click on the "Models" folder>Add>New Item> nane it "BillingContext.cs".
 The class is derived from DbContext class, which is a primary class in EF Core functionality for interacting with the database in an object-oriented manner without having to write raw SQL queries.
 The "DbSet" represents a collection of all the "BillRecord" entities in the database, essentially representing the "BillRecords" table in the database. 
 Through this property "DbSet", you can perform operations like querying the table, adding new records, or deleting existing ones.
-# Create another view and call it "Records" to display the inserted records. 
 # Create a new controller "BillingController":
 Right-click on “Controllers” folder>Add>Controller>name it "BillingController.cs".
 This controller will interact with the “BillingContext” to insert and display data.
