@@ -23,6 +23,8 @@ This controller will interact with the “BillingContext” to insert and displa
 Right-click on the "Billing" folder>Add>View>select "Razor View - Empty">name it "Index.cshtml" and call the model "BillRecord.cs" in it.
 Then set the layout of the form to use for inserting data into the database.
 Create another view and name it "Records.cshtml" to display the inserted records and call the model "BillRecord.cs" in it.
+# Perform Dependency Injection (DI):
+Navigate to "Program.cs" in the Solution Explorer. Here, you configure the connection to the database server and register DbContext as a service through the "BillingContext.cs" class.
 # Now, before you run the application, there are two important commands you need to run in the "Package Manager Console":
 Go to Tools menu in Visual Studio>NuGet Package Manager>Package Manager Console.
 Type the following commands to create the "billingsysdb" database and "billrecords" table:
