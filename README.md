@@ -6,7 +6,7 @@ Right-click on the "Models" folder>Add>New Item>select "Class" and name it "Bill
 # Add the connection string to be able to connect to MariaDB server:
 Navigate to the "appsettings.json" file in the Solution Explorer. 
 In the connection string, you put the name of the database "billingsysdb" even though it is not existing yet. 
-Also enter the password of your own instead of the one provided in this example application.
+Also enter the password that was used in the MariaDB setup instead of the one provided in this example application.
 # Add a few packages to the solution of the application to enable using EF and handle the connection to the database. 
 Right-click on the solution>Manage NuGet Packages for Solution>Browse Tab. 
 Here, there are three important packages to search for and install: "Microsoft.EntityFrameworkCore", "Microsoft.EntityFrameworkCore.Design", "Microsoft.EntityFrameworkCore.Tools", and "Pomelo.EntityFrameworkCore.MySql".
