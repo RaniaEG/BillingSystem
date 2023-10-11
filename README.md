@@ -18,16 +18,16 @@ Through this property "DbSet", you can perform operations like querying the tabl
 # Create a new controller "BillingController":
 Right-click on “Controllers” folder>Add>Controller>name it "BillingController.cs".
 This controller will interact with the “BillingContext” to insert and display data.
-# Create folder "Billing” under “Views”. 
+# Create folder "Billing" under "Views". 
 # Create new views in the created "Billing" folder.
 Right-click on the "Billing" folder>Add>View>select "Razor View - Empty">name it "Index.cshtml" and call the model "BillRecord.cs" in it.
 Then set the layout of the form to use for inserting data into the database.
 Create another view and name it "Records.cshtml" to display the inserted records and call the model "BillRecord.cs" in it.
-# Now, before you run the application, there are two important commands you need to run in the “Package Manager Console”:
+# Now, before you run the application, there are two important commands you need to run in the "Package Manager Console":
 Go to Tools menu in Visual Studio>NuGet Package Manager>Package Manager Console.
 Type the following commands to create the "billingsysdb" database and "billrecords" table:
 Command1: Add-Migration InitialCreate (Then press Enter)
-# What happens when you run “Add-Migration InitialCreate”?
+# What happens when you run "Add-Migration InitialCreate"?
 1.	EF Core checks the current state of your models and compares them to the last migration (if any exists). 
 2.	It calculates the differences and determines what changes need to be made to the database to make the database schema match the current state of the models.
 3.	EF Core then generates a migration file with a name like "XXXXXXXXXXXXXX_InitialCreate.cs" (where "XXXXXXXXXXXXXX" is a timestamp of when the migration was created). This file contains the operations necessary to apply the changes to the database.
